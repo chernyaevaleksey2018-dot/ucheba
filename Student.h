@@ -20,8 +20,9 @@ class GoodStudent : public Student //хороший студент всегда 
 public:
     GoodStudent(const std::string& name) : Student(name) {}
 
-    SolveResult solve(const QuadraticEquation& eq) const override {
-        return eq.solve(); // просто берём правильный ответ
+    SolveResult solve(const QuadraticEquation& eq) const override 
+    {
+        return eq.solve(); //берём правильный ответ
     }
 };
 
@@ -32,12 +33,15 @@ public:
     AverageStudent(const std::string& name, double prob = 0.7)
         : Student(name), correctProbability(prob) {}
 
-    SolveResult solve(const QuadraticEquation& eq) const override {
+    SolveResult solve(const QuadraticEquation& eq) const override 
+    {
         double roll = (double)rand() / RAND_MAX;
-        if (roll < correctProbability) {
-            return eq.solve(); // повезло — правильно
-        } else {
-            // Ошибается: возвращает случайный неверный ответ
+        if (roll < correctProbability) 
+        {
+            return eq.solve(); // повезло повезло, правильно
+        } else 
+        {
+            //студент ошибается: возвращает случайный неверный ответ
             SolveResult wrong;
             wrong.rootCount = 2;
             wrong.x1 = (double)(rand() % 10) - 5;
@@ -52,7 +56,8 @@ class BadStudent : public Student //плохой студент пишет "од
 public:
     BadStudent(const std::string& name) : Student(name) {}
 
-    SolveResult solve(const QuadraticEquation& eq) const override {
+    SolveResult solve(const QuadraticEquation& eq) const override 
+    {
         SolveResult lazy;
         lazy.rootCount = 1;
         lazy.x1 = 0;
