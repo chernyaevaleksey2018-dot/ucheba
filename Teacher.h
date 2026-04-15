@@ -31,7 +31,8 @@ public:
             return;
         }
         int count = 0;
-        while (!inbox.empty()) {
+        while (!inbox.empty()) 
+        {
             Letter letter = inbox.front();
             inbox.pop();
             if (letter.equation.checkAnswer(letter.answer))
@@ -41,18 +42,19 @@ public:
         std::cout << "проверено писем: " << count << "\n";
     }
 
-    void printTable() const {
-        if (scoreTable.empty()) {
+    void printTable() const 
+{
+        if (scoreTable.empty()) 
+        {
             std::cout << "таблица пустая (сначала проведите проверку)\n";
             return;
         }
         std::cout << "\n  --- таблица успеваемости ---\n";
-        std::cout << "  " << std::left << std::setw(20) << "студент"
-                  << "правильных ответов\n";
+        std::cout << "  " << std::left << std::setw(20) << "студент" << "правильных ответов\n";
         std::cout << "  " << std::string(38, '-') << "\n";
-        for (const auto& entry : scoreTable) {
-            std::cout << "  " << std::left << std::setw(20) << entry.first
-                      << entry.second << "\n";
+        for (const auto& entry : scoreTable) 
+        {
+            std::cout << "  " << std::left << std::setw(20) << entry.first << entry.second << "\n";
         }
         std::cout << "\n";
     }
