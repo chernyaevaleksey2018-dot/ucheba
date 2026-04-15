@@ -71,7 +71,7 @@ int main()
             break;
 
         case 2:
-            // Каждый студент решает каждое уравнение и "отправляет" ответ
+            // Каждый студент решает каждое уравнение и отправляет ответ
             for (const auto& student : students) 
             {
                 for (const auto& eq : equations) 
